@@ -7,13 +7,6 @@
 
     {% load static %}
     <link rel="stylesheet" href="{% static 'web_blog/post_details.css' %}">
-
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const content = document.querySelector(".post__content");
-            content.innerHTML = content.innerHTML.replace(/\n/g, "<br />");
-        });
-    </script>
 </head>
 <body>
     {% include 'web_blog/header.html' %}
@@ -22,7 +15,7 @@
             <h2 class="post__title">{{ post.title }}</h2>
             <p class="post__meta">By {{ post.author }}: {{ post.created_at.date }}</p>
             <div class="post__content">
-                {{ post.content }}
+                {{ post.content|linebreaksbr }}
             </div>
             <a href="{% url 'posts' %}" class="post__back__btn">← Back</a>
         </div>
