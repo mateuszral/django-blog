@@ -11,7 +11,18 @@
         font-size: 28px;
         letter-spacing: 1px;
     }
+
+    .new__post {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 24px;
+        text-decoration: none;
+    }
 </style>
 <header class="header">
     <h1 class="header__heading">My Blog</h1>
+    {% if user.is_authenticated %}
+    <a class="new__post" href="{% url 'new_post' %}" style="color: white; margin-right: 20px;">+</a>
+    {% endif %}
 </header>

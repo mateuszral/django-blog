@@ -1,7 +1,10 @@
 # django-blog
 
-- add post list page ✅
-- add post details page ✅
-- add author to post ✅
-- add photo to post
+- post list page ✅
+- post details page ✅
+- author to post ✅
+- photo to post
+- comments to post
+- add/edit post
+- dark theme
 - main template (post list and details have same heading and footer etc.) ✅

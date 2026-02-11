@@ -15,3 +15,6 @@ def post_details(request, post_id):
     post = get_object_or_404(Post, pk = post_id)
     post.content = post.content
     return render(request, "web_blog/post_details.html", {"post": post})
+
+def new_post(request):
+    return render(request, "web_blog/new_post.html")

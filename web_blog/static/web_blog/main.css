@@ -1,0 +1,19 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f9;
+    color: #333;
+}
+
+.main {
+    min-height: calc(100vh - 210px);
+    margin: 40px auto;
+}
