@@ -9,9 +9,7 @@
     <link rel="stylesheet" href="{% static 'web_blog/posts.css' %}">
 </head>
 <body>
-    <header class="header">
-        <h1 class="header__heading">My Blog</h1>
-    </header>
+    {% include 'web_blog/header.html' %}
     <main class="main">
         {% if posts %}
         <div class="container">
@@ -27,7 +25,7 @@
         {% else %}
             <p>No posts published yet :/</p>
         {% endif %}
-        <footer class="footer">&copy; My Blog 2026 | All rights reserved</footer>
     </main>
+    {% include 'web_blog/footer.html' %}
 </body>
 </html>
