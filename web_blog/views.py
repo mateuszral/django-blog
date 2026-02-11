@@ -13,4 +13,5 @@ def posts(request):
 
 def post_details(request, post_id):
     post = get_object_or_404(Post, pk = post_id)
-    return HttpResponse(f"<p>{post.title} {post.content} {post.created_at.date()}</p>")
+    post.content = post.content
+    return render(request, "web_blog/post_details.html", {"post": post})
