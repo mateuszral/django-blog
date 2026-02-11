@@ -5,91 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ post.title }}</title>
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f4f6f9;
-            color: #333;
-        }
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'web_blog/post_details.css' %}">
 
-        .header {
-            background: #222;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-
-        .header__heading {
-            margin: 0;
-            font-size: 28px;
-            letter-spacing: 1px;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
-
-        .post {
-            background: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-        }
-
-        .post__title {
-            margin-top: 0;
-            font-size: 28px;
-            color: #2c3e50;
-        }
-
-        .post__meta {
-            font-size: 14px;
-            color: #777;
-            margin-bottom: 20px;
-        }
-
-        .post__content {
-            line-height: 1.7;
-            margin-bottom: 15px;
-        }
-
-        .back__btn {
-            display: inline-block;
-            margin-top: 20px;
-            text-decoration: none;
-            color: white;
-            background: #007BFF;
-            padding: 10px 16px;
-            border-radius: 5px;
-            font-size: 14px;
-            transition: background 0.2s ease;
-        }
-
-        .back__btn:hover {
-            background: #0056b3;
-        }
-
-        .footer {
-            text-align: center;
-            padding: 20px;
-            background: #222;
-            color: white;
-            margin-top: 40px;
-        }
-
-        @media (max-width: 600px) {
-            .post {
-                padding: 20px;
-            }
-
-            .post__title {
-                font-size: 22px;
-            }
-        }
-    </style>
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             const content = document.querySelector(".post__content");
@@ -108,7 +26,7 @@
             <div class="post__content">
                 {{ post.content }}
             </div>
-            <a href="{% url 'posts' %}" class="back__btn">← Back</a>
+            <a href="{% url 'posts' %}" class="post__back__btn">← Back</a>
         </div>
     </main>
     <footer class="footer">&copy; My Blog 2026 | All rights reserved</footer>

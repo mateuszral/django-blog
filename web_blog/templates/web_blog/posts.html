@@ -4,93 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f4f6f9;
-            color: #333;
-        }
 
-        .header {
-            background: #222;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-
-        .header__heading {
-            margin: 0;
-            font-size: 28px;
-            letter-spacing: 1px;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 30px auto;
-            padding: 0 20px;
-        }
-
-        .post {
-            background: white;
-            padding: 20px;
-            margin-bottom: 25px;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        .post:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 15px rgba(0,0,0,0.08);
-        }
-
-        .post__title {
-            margin-top: 0;
-            color: #2c3e50;
-        }
-
-        .post__meta {
-
-            font-size: 14px;
-            color: #777;
-            margin-bottom: 15px;
-        }
-
-        .post__content {
-            line-height: 1.6;
-        }
-
-        .post__read__more {
-            display: inline-block;
-            margin-top: 15px;
-            text-decoration: none;
-            color: white;
-            background: #007BFF;
-            padding: 8px 14px;
-            border-radius: 5px;
-            font-size: 14px;
-            transition: background 0.2s ease;
-        }
-
-        .post__read__more:hover {
-            background: #0056b3;
-        }
-
-        .footer {
-            text-align: center;
-            padding: 20px;
-            background: #222;
-            color: white;
-            margin-top: 40px;
-        }
-
-        @media (max-width: 600px) {
-            .post {
-                padding: 15px;
-            }
-        }
-    </style>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'web_blog/posts.css' %}">
 </head>
 <body>
     <header class="header">
