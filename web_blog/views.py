@@ -37,3 +37,19 @@ def contact(request):
 
 def login(request):
     return HttpResponse("This is the login page.")
+
+def edit_post(request, post_id):
+    post = get_object_or_404(Post, pk=post_id)
+    if request.method == "POST":
+        form = PostForm(request.POST, instance=post)
+        if form.is_valid():
+            form.save()
+            return redirect("post_details", post_id=post.id)
+    else:
+        form = PostForm(instance=post)
+    return render(request, "web_blog/edit_post.html", {"form": form, "post": post})
+
+def delete_post(request, post_id):
+    post = get_object_or_404(Post, pk=post_id)
+    post.delete()
+    return redirect("posts")

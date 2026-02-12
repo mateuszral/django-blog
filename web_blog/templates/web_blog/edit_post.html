@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Blog - edit post</title>
+    <link rel="stylesheet" href="{% static 'web_blog/main.css' %}">
+    <link rel="stylesheet" href="{% static 'web_blog/new_post.css' %}">
+</head>
+<body>
+    {% include "web_blog/navbar.html" %}
+    <main class="main">
+        <div class="container">
+            <form method="POST" class="form">
+                {% csrf_token %}
+                <h2 class="form__heading">Edit Post</h2>
+                {% for field in form %}
+                    <div class="form__group">
+                        <label for="{{ field.name }}">{{ field.label }}</label>
+                        {{ field }}
+                    </div>
+                {% endfor %}
+
+                <button type="submit" class="form__button">Publish Post</button>
+            </form>
+        </div>
+    </main>
+    {% include "web_blog/footer.html" %}
+</body>
+</html>
