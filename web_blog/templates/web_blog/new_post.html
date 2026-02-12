@@ -15,7 +15,13 @@
             <form method="POST" class="form">
                 {% csrf_token %}
                 <h2 class="form__heading">Add New Post</h2>
-                {{ form.as_div }}
+                {% for field in form %}
+                    <div class="form__group">
+                        <label for="{{ field.name }}">{{ field.label }}</label>
+                        {{ field }}
+                    </div>
+                {% endfor %}
+
                 <button type="submit" class="form__button">Publish Post</button>
             </form>
         </div>

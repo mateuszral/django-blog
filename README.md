@@ -5,6 +5,8 @@
 - author to post ✅
 - photo to post
 - comments to post
-- add/edit post
+- add post ✅
+- edit post
+- delete post
 - dark theme
 - main template (post list and details have same heading and footer etc.) ✅
