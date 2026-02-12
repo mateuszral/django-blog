@@ -1,0 +1,92 @@
+<style>
+    .navbar {
+        background-color: #222;
+        padding: 15px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+
+    .logo {
+        color: #fff;
+        font-size: 22px;
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+    .navbar__links {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+    }
+
+    .navbar__links li a {
+        text-decoration: none;
+        color: #fff;
+        font-size: 16px;
+        padding: 8px 12px;
+        transition: 0.3s ease;
+        border-radius: 5px;
+    }
+
+    .navbar__links li a:hover {
+        background-color: #007bff;
+    }
+
+    /* Hamburger */
+    .menu-toggle {
+        display: none;
+        font-size: 26px;
+        color: #fff;
+        cursor: pointer;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .navbar__links {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 60px;
+            right: 20px;
+            background-color: #222;
+            width: 200px;
+            border-radius: 8px;
+            padding: 10px 0;
+        }
+
+        .navbar__links li {
+            text-align: center;
+            margin: 10px 0;
+        }
+
+        .menu-toggle {
+            display: block;
+        }
+
+        #menu-checkbox:checked+.menu-toggle+.navbar__links {
+            display: flex;
+        }
+    }
+</style>
+<nav class="navbar">
+    <a href="{% url 'index' %}" class="logo">MyBlog</a>
+
+    <input type="checkbox" id="menu-checkbox" hidden>
+    <label for="menu-checkbox" class="menu-toggle">&#9776;</label>
+
+    <ul class="navbar__links">
+        <li><a href="{% url 'index' %}">Home</a></li>
+        <li><a href="{% url 'about' %}">About</a></li>
+        <li><a href="{% url 'contact' %}">Contact</a></li>
+        {% if user.is_authenticated %}
+            <li><a href="{% url 'new_post' %}">New Post</a></li>
+            <li><a href="{% url 'index' %}">Logout</a></li>
+        {% else %}
+            <li><a href="{% url 'login' %}">Login</a></li>
+        {% endif %}
+    </ul>
+</nav>

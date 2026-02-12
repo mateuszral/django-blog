@@ -5,7 +5,7 @@ from .models import Post
 
 
 def index(request):
-    return HttpResponse("Hello, world. You're at the blog index.")
+    return render(request, "web_blog/index.html")
 
 def posts(request):
     posts_list = Post.objects.order_by("-created_at")
@@ -18,3 +18,12 @@ def post_details(request, post_id):
 
 def new_post(request):
     return render(request, "web_blog/new_post.html")
+
+def about(request):
+    return HttpResponse("This is the about page.")
+
+def contact(request):
+    return HttpResponse("This is the contact page.")
+
+def login(request):
+    return HttpResponse("This is the login page.")

@@ -5,15 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Blog - new post</title>
-    <link rel="stylesheet" href="{% static 'web_blog/new_post.css' %}">
     <link rel="stylesheet" href="{% static 'web_blog/main.css' %}">
+    <link rel="stylesheet" href="{% static 'web_blog/new_post.css' %}">
 </head>
 <body>
-    {% include "web_blog/header.html" %}
+    {% include "web_blog/navbar.html" %}
     <main class="main">
         <div class="container">
             <form action="#" method="POST" class="form">
-                <h2 class="form__header">Add New Post</h2>
+                <h2 class="form__heading">Add New Post</h2>
                 {% csrf_token %}
                 <div class="form__group">
                     <label for="title">Post Title</label>

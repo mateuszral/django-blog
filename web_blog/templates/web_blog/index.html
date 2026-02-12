@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyBlog</title>
+
+    <link rel="stylesheet" href="{% static 'web_blog/main.css' %}">
+    <link rel="stylesheet" href="{% static 'web_blog/index.css' %}">
+</head>
+<body>
+    {% include "web_blog/navbar.html" %}
+    <main class="main">
+            <h1>Welcome to My Blog</h1>
+            <p>Discover interesting articles, tutorials, and stories written with passion and creativity.</p>
+            <a href="{% url 'posts' %}" class="main__button">Read Latest Posts</a>
+
+        <!-- To do later -->
+        <!-- Featured Posts -->
+        <!-- <section class="posts">
+            <h2>Featured Posts</h2>
+            <div class="post-container">
+                <div class="post-card">
+                    <h3>First Blog Post</h3>
+                    <p>This is a short description of your first blog post.</p>
+                    <a href="#" class="btn">Read More</a>
+                </div>
+
+                <div class="post-card">
+                    <h3>Learning Web Design</h3>
+                    <p>Tips and tricks to improve your web development skills.</p>
+                    <a href="#" class="btn">Read More</a>
+                </div>
+
+                <div class="post-card">
+                    <h3>Travel Adventures</h3>
+                    <p>Sharing experiences and beautiful moments from travels.</p>
+                    <a href="#" class="btn">Read More</a>
+                </div>
+            </div>
+        </section> -->
+    </main>
+    {% include "web_blog/footer.html" %}    
+</body>
+</html>
