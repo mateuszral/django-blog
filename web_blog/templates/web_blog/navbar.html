@@ -79,7 +79,7 @@
     <label for="menu-checkbox" class="menu-toggle">&#9776;</label>
 
     <ul class="navbar__links">
-        <li><a href="{% url 'index' %}">Home</a></li>
+        <li><a href="{% url 'posts' %}">Posts</a></li>
         <li><a href="{% url 'about' %}">About</a></li>
         <li><a href="{% url 'contact' %}">Contact</a></li>
         {% if user.is_authenticated %}
