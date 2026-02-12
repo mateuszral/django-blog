@@ -1,7 +1,8 @@
 from django.http import HttpResponse
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import redirect, render, get_object_or_404
 
 from .models import Post
+from .forms import PostForm
 
 
 def index(request):
@@ -17,7 +18,16 @@ def post_details(request, post_id):
     return render(request, "web_blog/post_details.html", {"post": post})
 
 def new_post(request):
-    return render(request, "web_blog/new_post.html")
+    if request.method == "POST":
+        form = PostForm(request.POST)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.author = request.user.get_username()
+            post.save()
+            return redirect("post_details", post_id=post.id)
+        
+    form = PostForm()
+    return render(request, "web_blog/new_post.html", {"form": form})
 
 def about(request):
     return HttpResponse("This is the about page.")

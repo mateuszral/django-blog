@@ -12,19 +12,10 @@
     {% include "web_blog/navbar.html" %}
     <main class="main">
         <div class="container">
-            <form action="#" method="POST" class="form">
-                <h2 class="form__heading">Add New Post</h2>
+            <form method="POST" class="form">
                 {% csrf_token %}
-                <div class="form__group">
-                    <label for="title">Post Title</label>
-                    <input type="text" id="title" name="title" placeholder="Enter post title" required>
-                </div>
-
-                <div class="form__group">
-                    <label for="content">Post Content</label>
-                    <textarea id="content" name="content" placeholder="Write your content here..." required></textarea>
-                </div>
-
+                <h2 class="form__heading">Add New Post</h2>
+                {{ form.as_div }}
                 <button type="submit" class="form__button">Publish Post</button>
             </form>
         </div>
