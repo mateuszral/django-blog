@@ -12,6 +12,7 @@
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    position: relative;
 }
 
 .post:hover {
@@ -49,6 +50,24 @@
 
 .post__read__more:hover {
     background: #0056b3;
+}
+
+.post__edit,
+.post__delete {
+    position: absolute;
+    bottom: 15px;
+    right: 50px;
+    text-decoration: none;
+}
+
+.post__delete {
+    right: 15px;
+}
+
+.post__edit svg,
+.post__delete svg {
+    width: 25px;
+    height: 25px;
 }
 
 @media (max-width: 600px) {
