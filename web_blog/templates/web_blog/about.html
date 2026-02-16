@@ -1,0 +1,19 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyBlog about</title>
+    <link rel="stylesheet" href="{% static 'web_blog/main.css' %}">
+    <!-- <link rel="stylesheet" href="{% static 'web_blog/about.css' %}"> -->
+</head>
+<body>
+    {% include "web_blog/navbar.html" %}
+    <main class="main">
+        <h1>About Us</h1>
+        <p>Welcome to MyBlog! We are passionate about sharing our thoughts, ideas, and stories with the world. Our mission is to create a platform where people can connect, learn, and be inspired through the power of words.</p>
+    </main>
+    {% include "web_blog/footer.html" %}    
+</body>
+</html>

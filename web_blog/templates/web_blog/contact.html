@@ -1,0 +1,19 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyBlog contact</title>
+    <link rel="stylesheet" href="{% static 'web_blog/main.css' %}">
+    <!-- <link rel="stylesheet" href="{% static 'web_blog/contact.css' %}"> -->
+</head>
+<body>
+    {% include "web_blog/navbar.html" %}
+    <main class="main">
+        <h1>Contact Us</h1>
+        <p>If you have any questions, suggestions, or just want to say hello, feel free to reach out to us!</p>
+    </main>
+    {% include "web_blog/footer.html" %}    
+</body>
+</html>

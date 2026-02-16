@@ -5,8 +5,8 @@ from .models import Post
 from .forms import PostForm
 
 
-def index(request):
-    return render(request, "web_blog/index.html")
+def home(request):
+    return render(request, "web_blog/home.html")
 
 def posts(request):
     posts_list = Post.objects.order_by("-created_at")
@@ -30,13 +30,17 @@ def new_post(request):
     return render(request, "web_blog/new_post.html", {"form": form})
 
 def about(request):
-    return HttpResponse("This is the about page.")
+    return render(request, "web_blog/about.html")
 
 def contact(request):
-    return HttpResponse("This is the contact page.")
+    return render(request, "web_blog/contact.html")
 
 def login(request):
     return HttpResponse("This is the login page.")
+
+def logout(request):
+    request.session.flush()
+    return redirect("")
 
 def edit_post(request, post_id):
     post = get_object_or_404(Post, pk=post_id)
