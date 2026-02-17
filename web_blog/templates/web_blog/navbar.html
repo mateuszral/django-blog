@@ -23,16 +23,29 @@
         gap: 20px;
     }
 
-    .navbar__links li a {
+    li {
+        display: flex;
+        justify-content: center;
+    }
+
+    .navbar__links li a,
+    .navbar__links form button {
         text-decoration: none;
         color: #fff;
         font-size: 16px;
-        padding: 8px 12px;
         transition: 0.3s ease;
         border-radius: 5px;
+        padding: 8px 12px;
     }
 
-    .navbar__links li a:hover {
+    .navbar__links form button {
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
+    .navbar__links li a:hover,
+    .navbar__links form button:hover {
         background-color: #007bff;
     }
 
@@ -84,7 +97,12 @@
         <li><a href="{% url 'contact' %}">Contact</a></li>
         {% if user.is_authenticated %}
             <li><a href="{% url 'new_post' %}">New Post</a></li>
-            <li><a href="{% url 'logout' %}">Logout</a></li>
+            <li>
+                <form  method="POST" action="{% url 'logout' %}" style="display: inline;">
+                    {% csrf_token %}
+                    <button type="submit">Logout</button>
+                </form>
+            </li>
         {% else %}
             <li><a href="{% url 'login' %}">Login</a></li>
         {% endif %}
